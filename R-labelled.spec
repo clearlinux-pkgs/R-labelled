@@ -4,7 +4,7 @@
 #
 Name     : R-labelled
 Version  : 1.0.1
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/labelled_1.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/labelled_1.0.1.tar.gz
 Summary  : Manipulating Labelled Data
@@ -13,11 +13,9 @@ License  : GPL-3.0
 Requires: R-dplyr
 Requires: R-haven
 Requires: R-memisc
-Requires: R-questionr
 BuildRequires : R-dplyr
 BuildRequires : R-haven
 BuildRequires : R-memisc
-BuildRequires : R-questionr
 BuildRequires : clr-R-helpers
 
 %description
@@ -31,11 +29,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521298241
+export SOURCE_DATE_EPOCH=1521299314
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521298241
+export SOURCE_DATE_EPOCH=1521299314
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
