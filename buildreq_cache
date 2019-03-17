@@ -1,5 +1,7 @@
 2.1.0
 R-assertthat
 R-dplyr
+R-forcats
 R-haven
 R-memisc
+R-purrr
