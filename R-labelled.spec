@@ -4,14 +4,12 @@
 #
 Name     : R-labelled
 Version  : 2.1.0
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/labelled_2.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/labelled_2.1.0.tar.gz
 Summary  : Manipulating Labelled Data
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-forcats
-Requires: R-purrr
 BuildRequires : R-assertthat
 BuildRequires : R-dplyr
 BuildRequires : R-forcats
@@ -33,10 +31,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552853074
+export SOURCE_DATE_EPOCH=1552890294
 
 %install
-export SOURCE_DATE_EPOCH=1552853074
+export SOURCE_DATE_EPOCH=1552890294
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
