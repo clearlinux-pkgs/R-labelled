@@ -1,7 +1,10 @@
-2.1.0
+2.2.0
+R-Rcpp
 R-assertthat
 R-dplyr
 R-forcats
 R-haven
+R-hms
 R-memisc
+R-pillar
 R-purrr
