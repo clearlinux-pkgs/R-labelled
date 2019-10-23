@@ -4,25 +4,26 @@
 #
 Name     : R-labelled
 Version  : 2.2.1
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/labelled_2.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/labelled_2.2.1.tar.gz
 Summary  : Manipulating Labelled Data
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-dplyr
-Requires: R-evaluate
-Requires: R-forcats
 Requires: R-haven
-Requires: R-hms
-Requires: R-memisc
+BuildRequires : R-Rcpp
+BuildRequires : R-assertthat
 BuildRequires : R-dplyr
 BuildRequires : R-evaluate
 BuildRequires : R-forcats
 BuildRequires : R-haven
 BuildRequires : R-hms
 BuildRequires : R-memisc
+BuildRequires : R-pillar
+BuildRequires : R-purrr
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 # labelled <img src="man/figures/labelled.png" align="right" width="120" />
@@ -43,13 +44,13 @@ Status](https://travis-ci.org/larmarange/labelled.svg?branch=master)](https://tr
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1558902213
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571851580
 
 %install
-export SOURCE_DATE_EPOCH=1558902213
+export SOURCE_DATE_EPOCH=1571851580
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -78,7 +79,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
