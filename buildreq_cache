@@ -1,12 +1,2 @@
-2.2.1
-R-Rcpp
-R-assertthat
-R-dplyr
-R-evaluate
-R-forcats
-R-haven
-R-hms
+2.2.2
 R-memisc
-R-pillar
-R-purrr
-util-linux
