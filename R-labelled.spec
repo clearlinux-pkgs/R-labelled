@@ -4,7 +4,7 @@
 #
 Name     : R-labelled
 Version  : 2.3.1
-Release  : 38
+Release  : 39
 URL      : https://cran.r-project.org/src/contrib/labelled_2.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/labelled_2.3.1.tar.gz
 Summary  : Manipulating Labelled Data
@@ -19,34 +19,28 @@ BuildRequires : R-memisc
 BuildRequires : buildreq-R
 
 %description
-# labelled <img src="man/figures/labelled.png" align="right" width="120" />
-[![Project Status: Active - The project has reached a stable, usable
-state and is being actively
-developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
-[![Travis-CI Build
-Status](https://travis-ci.org/larmarange/labelled.svg?branch=master)](https://travis-ci.org/larmarange/labelled)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/labelled)](https://cran.r-project.org/package=labelled)
-[![Rdoc](http://www.rdocumentation.org/badges/version/labelled)](http://www.rdocumentation.org/packages/labelled)
-[![Downloads](https://cranlogs.r-pkg.org/badges/labelled)](https://cran.r-project.org/package=labelled)
-[![DOI](https://www.zenodo.org/badge/38772078.svg)](https://www.zenodo.org/badge/latestdoi/38772078)
+or 'Stata' with 'haven' or 'foreign'. This package
+    provides useful functions to deal with "haven_labelled" and
+    "haven_labelled_spss" classes introduced by 'haven' package.
 
 %prep
 %setup -q -c -n labelled
+cd %{_builddir}/labelled
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588190062
+export SOURCE_DATE_EPOCH=1589827695
 
 %install
-export SOURCE_DATE_EPOCH=1588190062
+export SOURCE_DATE_EPOCH=1589827695
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
