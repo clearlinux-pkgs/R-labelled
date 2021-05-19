@@ -4,7 +4,7 @@
 #
 Name     : R-labelled
 Version  : 2.8.0
-Release  : 49
+Release  : 50
 URL      : https://cran.r-project.org/src/contrib/labelled_2.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/labelled_2.8.0.tar.gz
 Summary  : Manipulating Labelled Data
