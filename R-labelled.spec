@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-labelled
-Version  : 2.11.0
-Release  : 69
-URL      : https://cran.r-project.org/src/contrib/labelled_2.11.0.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/labelled_2.11.0.tar.gz
+Version  : 2.12.0
+Release  : 70
+URL      : https://cran.r-project.org/src/contrib/labelled_2.12.0.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/labelled_2.12.0.tar.gz
 Summary  : Manipulating Labelled Data
 Group    : Development/Tools
 License  : GPL-3.0
@@ -38,16 +38,19 @@ or 'Stata' with 'haven' or 'foreign'. This package
 
 %prep
 %setup -q -n labelled
+pushd ..
+cp -a labelled buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681317397
+export SOURCE_DATE_EPOCH=1687448160
 
 %install
-export SOURCE_DATE_EPOCH=1681317397
+export SOURCE_DATE_EPOCH=1687448160
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -85,6 +88,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -117,6 +121,9 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/labelled/doc/missing_values.R
 /usr/lib64/R/library/labelled/doc/missing_values.Rmd
 /usr/lib64/R/library/labelled/doc/missing_values.html
+/usr/lib64/R/library/labelled/doc/packed_columns.R
+/usr/lib64/R/library/labelled/doc/packed_columns.Rmd
+/usr/lib64/R/library/labelled/doc/packed_columns.html
 /usr/lib64/R/library/labelled/help/AnIndex
 /usr/lib64/R/library/labelled/help/aliases.rds
 /usr/lib64/R/library/labelled/help/figures/labelled.png
